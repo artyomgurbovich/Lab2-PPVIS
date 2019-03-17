@@ -1,20 +1,21 @@
 package lab.model;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Model {
 	
-	private ArrayList<Student> students;
+	private Map<Student, Passes> records;
 	
 	public Model() {
-		this.students = new ArrayList<Student>();
+		this.records = new HashMap<Student, Passes>();
 	}
 	
-	public ArrayList<Student> getStudents() {
-		return students;
+	public Map<Student, Passes> getRecords() {
+		return records;
 	}
 	
-	public void setStudents(ArrayList<Student> students) {
-		this.students = students;
+	public void setRecords(Map<Student, Passes> records) {
+		this.records = records;
 	}
 }

@@ -35,10 +35,6 @@ public class ColumnGroup {
         groups.add(group);
     }
 
-    /**
-     * @param column
-     *            TableColumn
-     */
     public List<ColumnGroup> getColumnGroups(TableColumn column) {
         if (!contains(column)) {
             return Collections.emptyList();

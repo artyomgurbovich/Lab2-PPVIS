@@ -2,43 +2,31 @@ package lab.model;
 
 public class Student {
 	
-	private String fullName;
-	private int group;
-	private int diseasePasses;
-	private int otherReasonPasses;
-	private int withoutReasonPasses;
-	private int allPasses;
+	private String firstName;
+	private String middleName;
+	private String lastName;
+	private String group;
 	
-	public Student(String fullName, int group, int diseasePasses, int otherReasonPasses, int withoutReasonPasses) {
-		this.fullName = fullName;
+	public Student(String firstName, String middleName, String lastName, String group) {
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
 		this.group = group;
-		this.diseasePasses = diseasePasses;
-		this.otherReasonPasses = otherReasonPasses;
-		this.withoutReasonPasses = withoutReasonPasses;
-		this.allPasses = diseasePasses + otherReasonPasses + withoutReasonPasses;
 	}
 	
-	public String getFullName() {
-		return fullName;
+	public String getFirstName() {
+		return firstName;
 	}
 	
-	public int getGroup() {
+	public String getMiddleName() {
+		return middleName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public String getGroup() {
 		return group;
-	}
-	
-	public int getDiseasePasses() {
-		return diseasePasses;
-	}
-	
-	public int getOtherReasonPasses() {
-		return otherReasonPasses;
-	}
-	
-	public int getWithoutReasonPasses() {
-		return withoutReasonPasses;
-	}
-	
-	public int getAllPasses() {
-		return allPasses;
 	}
 }
