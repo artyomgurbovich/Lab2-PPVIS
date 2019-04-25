@@ -5,12 +5,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.JFileChooser;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import org.xml.sax.SAXException;
 import lab.model.*;
 import lab.view.window.*;
+import lab4.MyFileChooser;
+//import javax.swing.JFileChooser;
 
 public class Controller {
 	
@@ -102,21 +103,35 @@ public class Controller {
 	}
 	
 	public void loadRecords() throws SAXException, IOException, ParserConfigurationException {
-		JFileChooser fileload = new JFileChooser();
-		int ret = fileload.showDialog(null, "Open file");                
-		if (ret == JFileChooser.APPROVE_OPTION) {
-		    File file = fileload.getSelectedFile();
+		//JFileChooser fileload = new JFileChooser();
+		//int ret = fileload.showDialog(null, "Open file");                
+		//if (ret == JFileChooser.APPROVE_OPTION) {
+		//    File file = fileload.getSelectedFile();
+		//	  model.setRecords(fileManager.read(file));
+		//}
+		
+		MyFileChooser fileload = new MyFileChooser();
+		int ret = fileload.showLoadDialog();
+		if (ret == MyFileChooser.APPROVE_OPTION) {
+			File file = fileload.getSelectedFile();
 			model.setRecords(fileManager.read(file));
 		}
 	}
 	
 	public void saveStudents() throws ParserConfigurationException, TransformerException {
-		JFileChooser filesave = new JFileChooser();
-		filesave.setDialogTitle("Save file");
-		int ret = filesave.showSaveDialog(null);               
-		if (ret == JFileChooser.APPROVE_OPTION) {
-		    File file = filesave.getSelectedFile();
-		    fileManager.write(file, getRecords());
+		//JFileChooser filesave = new JFileChooser();
+		//filesave.setDialogTitle("Save file");
+		//int ret = filesave.showSaveDialog(null);               
+		//if (ret == JFileChooser.APPROVE_OPTION) {
+		//    File file = filesave.getSelectedFile();
+		//    fileManager.write(file, getRecords());
+		//}
+		
+		MyFileChooser filesave = new MyFileChooser();
+		int ret = filesave.showSaveDialog();
+		if (ret == MyFileChooser.APPROVE_OPTION) {
+			File file = filesave.getSelectedFile();
+			fileManager.write(file, getRecords());
 		}
 	}
 	
